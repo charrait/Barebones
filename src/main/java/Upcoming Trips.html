@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBuddy - Locations</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/index.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid rgba(229, 137, 221, 0.87);
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: rgba(236, 190, 233, 0.71);
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(236, 190, 233, 0.71);
+        }
+        .chat-container {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .input-group {
+            margin-top: 10px;
+        }
+        .input-group input, .input-group button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="menu">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="New Itinerary.html">New Itinerary</a></li>
+            <li><a href="Upcoming Trips.html">Upcoming Trips</a></li>
+            <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+    </nav>
+    <h1>Your favorite travel companion!</h1>
+    <img src="https://mail.google.com/mail/u/0?ui=2&ik=29650a62f7&attid=0.1&permmsgid=msg-a:r-4602698308078071973&th=191146db4856662e&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ9aAKpEyaqvMqz87dbHpJ7zcPFNRILFBE_bSZWNyKwWHwYMgneG6xNENiE8EyZuxS4ibbTTF68o15IMKu6S6hA1OCZinh6WeX1dJATqrVYy6LE0MocgRy48IzA&disp=emb&realattid=6111B6F7-8732-47DB-AC33-34743C79AAC2"
+
+</header>
+
+<main>
+    <h2>Popular Destinations</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Destination</th>
+            <th>Country</th>
+            <th>Best Time to Visit</th>
+            <th>Attractions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Paris</td>
+            <td>France</td>
+            <td>April to October</td>
+            <td>Eiffel Tower, Louvre Museum, Notre-Dame Cathedral</td>
+        </tr>
+        <tr>
+            <td>Tokyo</td>
+            <td>Japan</td>
+            <td>March to May, September to November</td>
+            <td>Tokyo Skytree, Senso-ji Temple, Shibuya Crossing</td>
+        </tr>
+        <tr>
+            <td>New York City</td>
+            <td>United States</td>
+            <td>April to June, September to November</td>
+            <td>Statue of Liberty, Central Park, Times Square</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="chat-container">
+        <div id="chat-window">
+            <div id="messages"></div>
+            <div class="input-group">
+                <input id="nameInput" type="text" placeholder="Enter your name:">
+                <input id="messageInput" type="text" placeholder="Enter Location:">
+                <button id="chatSubmit">Submit</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 TravelBuddy. All rights reserved.</p>
+</footer>
+</body>
+</html>

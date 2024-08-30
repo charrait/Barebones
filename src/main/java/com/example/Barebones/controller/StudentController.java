@@ -27,7 +27,7 @@ public class StudentController {
 	public String listStudents(Model model) {
 		System.out.println("IN  StudentController->listStudents()");
 		model.addAttribute("students", studentService.getAllStudents());
-		return "students";
+		return "tripmanagement";
 	}
 	
 	@GetMapping("/students/new")
@@ -36,7 +36,7 @@ public class StudentController {
 		// create student object to hold student form data
 		Student student = new Student();
 		model.addAttribute("student", student);
-		return "create_student";
+		return "create_user";
 		
 	}
 	
@@ -51,7 +51,7 @@ public class StudentController {
 	public String editStudentForm(@PathVariable Long id, Model model) {
 		System.out.println("IN  StudentController->editStudentForm()");
 		model.addAttribute("student", studentService.getStudentById(id));
-		return "edit_student";
+		return "edit_trip";
 	}
 
 	@PostMapping("/students/{id}")

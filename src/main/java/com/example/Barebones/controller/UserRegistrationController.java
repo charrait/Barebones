@@ -45,7 +45,7 @@ public class UserRegistrationController {
            result.rejectValue("email", null, "There is already an account registered with that email");
        }
        
-       System.out.println("ZZZZZZZZZZZZZZZ result:"+result.toString());
+       System.out.println("Completed result:"+result.toString());
        
        if (result.hasErrors()){
     	   System.out.println("result:"+result.toString());

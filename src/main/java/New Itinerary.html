@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBuddy - Your Favorite Travel Companion</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Inline styles for dropdown */
+        .dropbtn {
+            background-color: rgba(236, 190, 233, 0.71);
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: rgba(229, 137, 221, 0.87);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {background-color: #ddd;}
+
+        .show {display: block;}
+
+        /* Additional styles for modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="new-itinerary.html">New Itinerary</a></li>
+            <li><a href="upcoming-trips.html">Upcoming Trips</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="home">
+        <h1>Welcome to TravelBuddy - Your Favorite Travel Companion!</h1>
+        <p>Looking to plan your next trip? You've made it to the correct destination.</p>
+
+        <h2>Why TravelBuddy?</h2>
+        <ul>
+            <li><strong>Everyone needs a buddy:</strong> Don't stress yourself with the small details. Leave your stress at home and bring TravelBuddy with you!</li>
+        </ul>
+
+        <div class="dropdown">
+            <button onclick="toggleDropdown()" class="dropbtn">Menu</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <div class="card" onclick="openModal('https://example.com/path-to-your-image.jpg')">
+            <img src="https://mail.google.com/mail/u/0?ui=2&ik=29650a62f7&attid=0.1&permmsgid=msg-a:r-4602698308078071973&th=191146db4856662e&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ9aAKpEyaqvMqz87dbHpJ7zcPFNRILFBE_bSZWNyKwWHwYMgneG6xNENiE8EyZuxS4ibbTTF68o15IMKu6S6hA1OCZinh6WeX1dJATqrVYy6LE0MocgRy48IzA&disp=emb&realattid=6111B6F7-8732-47DB-AC33-34743C79AAC2"
+            <div class="card-info">
+                <!-- Add card information here -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modal-image">
+</div>
+
+<footer>
+    <p>&copy; 2024 TravelBuddy. All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleDropdown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
+    function openModal(imgSrc) {
+        var modal = document.getElementById("modal");
+        var modalImg = document.getElementById("modal-image");
+        modal.style.display = "block";
+        modalImg.src = imgSrc;
+    }
+
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+</script>
+</body>
+</html>
